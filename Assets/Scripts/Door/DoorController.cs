@@ -10,6 +10,7 @@ public class DoorController : MonoBehaviour
     private RaycastHit hit;
     private Ray ray;
 
+    public System.Action OnPickKey;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +25,11 @@ public class DoorController : MonoBehaviour
 
     public void OnClick_LeftMouseButton()
     {
-        Debug.Log("OnClick_LeftMouseButton");
         ray = new Ray(m_camera.position, m_camera.forward);
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.collider.CompareTag("Door"))
             {
-                Debug.Log("hitting door");
                 Door.Click.DoorTrigger door = hit.collider.GetComponent<Door.Click.DoorTrigger>();
                 if (door.DoorState == Door.Click.DoorTrigger.State.Close)
                 {
@@ -40,6 +39,11 @@ public class DoorController : MonoBehaviour
                 {
                     door.CloseDoor();
                 }
+            }
+            else if (hit.collider.CompareTag("Key"))
+            {
+                OnPickKey?.Invoke();
+                hit.collider.gameObject.SetActive(false);
             }
         }
 
