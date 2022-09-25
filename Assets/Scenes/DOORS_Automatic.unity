@@ -1342,7 +1342,10 @@ GameObject:
   - component: {fileID: 5396818407114655786}
   - component: {fileID: 5396818407114655787}
   - component: {fileID: 5396818407114655788}
+<<<<<<< HEAD
   - component: {fileID: 5396818407114655789}
+=======
+>>>>>>> e53b6e4e5ce4ecda818fff728c646b5003ba299f
   m_Layer: 0
   m_Name: DOOR PANEL
   m_TagString: Door
@@ -3206,6 +3209,7 @@ GameObject:
   - component: {fileID: 8004106050972893433}
   - component: {fileID: 1034115947221577139}
   - component: {fileID: 1259025293479433621}
+  - component: {fileID: 8004106050972893434}
   m_Layer: 0
   m_Name: skp1406_002
   m_TagString: Untagged
@@ -3727,6 +3731,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
 --- !u!65 &5396818407114655788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3741,17 +3746,34 @@ BoxCollider:
   m_Size: {x: 24, y: 150.00003, z: 320.00006}
   m_Center: {x: -2, y: 75.00003, z: -0.000015258789}
 --- !u!114 &5396818407114655789
+=======
+--- !u!114 &5396818407114655788
+>>>>>>> e53b6e4e5ce4ecda818fff728c646b5003ba299f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700780749630650114}
+<<<<<<< HEAD
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 713dbaef62516486284e7c4e4145754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+>>>>>>> e53b6e4e5ce4ecda818fff728c646b5003ba299f
 --- !u!23 &5457081093785402177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5152,6 +5174,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411997914505345560}
   m_Mesh: {fileID: 4796203502513316961, guid: 928f293edba6f42409eb31d6486d4348, type: 3}
+--- !u!114 &8004106050972893434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411997914505345560}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &8016231993680391593
 Transform:
   m_ObjectHideFlags: 0
