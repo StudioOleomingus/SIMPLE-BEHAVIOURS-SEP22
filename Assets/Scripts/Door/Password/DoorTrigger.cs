@@ -16,6 +16,8 @@ namespace Door.Password
         [SerializeField] private Button confirmButton;
         [SerializeField] private Button closeButton;
 
+        private GameObject player;
+
         public enum State { Close, Open }
         private State state;
         public State DoorState { get { return state; } }
@@ -42,20 +44,9 @@ namespace Door.Password
         {
             if (doorMessage)
             {
-                //if (hasKey)
-                //{
-                //    if (other.CompareTag("Player"))
-                //    {
-                //        animator.Play(Animator.StringToHash("door_open"));
-                //        state = State.Open;
-                //    }
-                //}
-                //else
-                //{
-
-                //}
                 doorMessage.SetActive(true);
-                other.GetComponent<FirstPersonController>().enabled = false;
+                player = other.gameObject;
+                player.GetComponent<FirstPersonController>().enabled = false;
                 Cursor.lockState = CursorLockMode.None;
             }
             else
@@ -90,6 +81,7 @@ namespace Door.Password
                 state = State.Open;
                 doorMessage.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
+                player.GetComponent<FirstPersonController>().enabled = true;
             }
         }
 
