@@ -1779,6 +1779,7 @@ GameObject:
   - component: {fileID: 2625688888774172317}
   - component: {fileID: 5396818407114655786}
   - component: {fileID: 5396818407114655787}
+  - component: {fileID: 5396818407114655788}
   m_Layer: 0
   m_Name: DOOR PANEL
   m_TagString: Untagged
@@ -3949,6 +3950,7 @@ GameObject:
   - component: {fileID: 8004106050972893433}
   - component: {fileID: 1034115947221577139}
   - component: {fileID: 1259025293479433621}
+  - component: {fileID: 8004106050972893434}
   m_Layer: 0
   m_Name: skp1406_002
   m_TagString: Untagged
@@ -4526,6 +4528,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5396818407114655788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700780749630650114}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &5457081093785402177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6055,6 +6075,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411997914505345560}
   m_Mesh: {fileID: 4796203502513316961, guid: 928f293edba6f42409eb31d6486d4348, type: 3}
+--- !u!114 &8004106050972893434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411997914505345560}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &8016231993680391593
 Transform:
   m_ObjectHideFlags: 0
