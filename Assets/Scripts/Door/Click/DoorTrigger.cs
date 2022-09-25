@@ -3,13 +3,21 @@ using UnityEngine.EventSystems;
 
 namespace Door.Click
 {
-    public class DoorTrigger : MonoBehaviour
+    public class DoorTrigger : Door
     {
-        [SerializeField] private Animator animator;
-
         public enum State { Close, Open }
         private State state;
         public State DoorState { get { return state; } }
+
+        private void OnEnable()
+        {
+            doorPanel.OnClickCallback += OnClick;
+        }
+
+        private void OnDisable()
+        {
+            doorPanel.OnClickCallback -= OnClick;
+        }
 
         public void OpenDoor()
         {
@@ -23,16 +31,19 @@ namespace Door.Click
             state = State.Close;
         }
 
-        //public void OnPointerClick(PointerEventData eventData)
-        //{
-        //    if (state == State.Close)
-        //    {
-        //        OpenDoor();
-        //    }
-        //    else if (state == State.Open)
-        //    {
-        //        CloseDoor();
-        //    }
-        //}
+        public void OnClick()
+        {
+            Debug.Log("OnClick");
+            if (state == State.Close)
+            {
+                Debug.Log("Door Close");
+                OpenDoor();
+            }
+            else if (state == State.Open)
+            {
+                Debug.Log("Door Open");
+                CloseDoor();
+            }
+        }
     }
 }

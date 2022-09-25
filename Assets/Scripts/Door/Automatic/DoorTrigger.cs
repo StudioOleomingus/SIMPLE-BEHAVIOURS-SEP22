@@ -2,9 +2,8 @@ using UnityEngine;
 
 namespace Door.Automatic
 {
-    public class DoorTrigger : MonoBehaviour
+    public class DoorTrigger : Door
     {
-        [SerializeField] private Animator animator;
         [SerializeField] private GameObject doorMessage;
         [SerializeField] private bool hasKey;
 
@@ -16,15 +15,19 @@ namespace Door.Automatic
 
         private void OnEnable()
         {
-            doorController.OnPickKey += OnPickKey;
+            if(doorController) doorController.OnPickKey += OnPickKey;
+            doorPanel.OnTriggerEnterCallback += OnTriggerEnterCallback;
+            doorPanel.OnTriggerExitCallback += OnTriggerExitCallback;
         }
 
         private void OnDisable()
         {
-            doorController.OnPickKey -= OnPickKey;
+            if (doorController) doorController.OnPickKey -= OnPickKey;
+            doorPanel.OnTriggerEnterCallback -= OnTriggerEnterCallback;
+            doorPanel.OnTriggerExitCallback -= OnTriggerExitCallback;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnterCallback(Collider other)
         {
             if (doorMessage)
             {
@@ -51,7 +54,7 @@ namespace Door.Automatic
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerExitCallback(Collider other)
         {
             if (doorMessage)
             {
@@ -66,7 +69,7 @@ namespace Door.Automatic
             {
                 if (other.CompareTag("Player") && state == State.Open)
                 {
-                    animator.Play(Animator.StringToHash("door_open"));
+                    animator.Play(Animator.StringToHash("door_close"));
                     state = State.Close;
                 }
             }

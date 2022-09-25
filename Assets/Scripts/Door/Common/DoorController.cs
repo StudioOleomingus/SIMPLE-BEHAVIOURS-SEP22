@@ -15,7 +15,7 @@ public class DoorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OnFire(InputValue value)
@@ -30,15 +30,7 @@ public class DoorController : MonoBehaviour
         {
             if (hit.collider.CompareTag("Door"))
             {
-                Door.Click.DoorTrigger door = hit.collider.GetComponent<Door.Click.DoorTrigger>();
-                if (door.DoorState == Door.Click.DoorTrigger.State.Close)
-                {
-                    door.OpenDoor();
-                }
-                else if (door.DoorState == Door.Click.DoorTrigger.State.Open)
-                {
-                    door.CloseDoor();
-                }
+                hit.collider.GetComponent<DoorPanel>().OnClick();
             }
             else if (hit.collider.CompareTag("Key"))
             {
